@@ -1,0 +1,142 @@
+[
+    {
+        "id": "f1bb5c6d14d52dd1",
+        "type": "tab",
+        "label": "Fluxo 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "599b114f57ae8b34",
+        "type": "mqtt in",
+        "z": "f1bb5c6d14d52dd1",
+        "name": "MQTT – Leitura ESP32",
+        "topic": "INTELI/ESP32/SENSOR",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "911d6ebade6b69db",
+                "ddedf69f6dbc1b69"
+            ]
+        ]
+    },
+    {
+        "id": "911d6ebade6b69db",
+        "type": "json",
+        "z": "f1bb5c6d14d52dd1",
+        "name": "JSON → Objeto",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "29897ea489ab6d93"
+            ]
+        ]
+    },
+    {
+        "id": "29897ea489ab6d93",
+        "type": "function",
+        "z": "f1bb5c6d14d52dd1",
+        "name": "Formatar dados p/ API",
+        "func": "msg.payload = {\n  motor_temp: Number(msg.payload.motor_temp),\n  vibration_rms: Number(msg.payload.vibration_rms),\n  current: Number(msg.payload.current)\n};\nmsg.headers = { \"Content-Type\": \"application/json\" };\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 260,
+        "wires": [
+            [
+                "bdd59f10de09f73d",
+                "09023a431a02391f"
+            ]
+        ]
+    },
+    {
+        "id": "bdd59f10de09f73d",
+        "type": "http request",
+        "z": "f1bb5c6d14d52dd1",
+        "name": "HTTP – Chama API Colab",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://tangentially-untreasurable-coralee.ngrok-free.dev/predict",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "6d6c26dd2a63b31a"
+            ]
+        ]
+    },
+    {
+        "id": "ddedf69f6dbc1b69",
+        "type": "debug",
+        "z": "f1bb5c6d14d52dd1",
+        "name": "Debug - INPUT",
+        "active": true,
+        "tosidebar": true,
+        "complete": "payload",
+        "x": 260,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "09023a431a02391f",
+        "type": "debug",
+        "z": "f1bb5c6d14d52dd1",
+        "name": "Debug - Body p/ API",
+        "active": false,
+        "tosidebar": true,
+        "complete": "true",
+        "x": 560,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "6d6c26dd2a63b31a",
+        "type": "debug",
+        "z": "f1bb5c6d14d52dd1",
+        "name": "Debug - Resposta API",
+        "active": true,
+        "tosidebar": true,
+        "complete": "payload",
+        "x": 720,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "HiveMQ",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthQos": "0",
+        "willQos": "0"
+    }
+]
