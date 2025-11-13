@@ -1,5 +1,5 @@
 /********************************************************************
- * Projeto: Envio de Dados MQTT com ESP32 - Aula Teste Inteli 12/11/2025
+ * Projeto: Envio de Dados MQTT com ESP32 - 12/11/2025
  * Autor: André Tritiack
  * Placa: DOIT ESP32 DEVKIT V1
  * 
@@ -20,8 +20,8 @@
 #define boardLED 2
 
 // Wi-Fi
-const char* SSID     = "iPhone de André";
-const char* PASSWORD = "bellabella1302";
+const char* SSID     = "SEU_SSID";
+const char* PASSWORD = "SUA_SENHA";
 
 // Broker MQTT (HiveMQ público)
 const char* BROKER_MQTT = "broker.hivemq.com";

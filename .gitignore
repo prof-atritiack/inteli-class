@@ -1,0 +1,67 @@
+# Arquivos de credenciais e configuração sensível
+*.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Arquivos de configuração com credenciais
+config.json
+secrets.json
+credentials.json
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Logs
+*.log
+logs/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Arquivos de build
+build/
+dist/
+*.egg-info/
+
+# Node.js (caso seja usado)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de backup do Arduino
+*.bak
+
+# Arquivos de configuração local
+local_config.h
+wifi_config.h
+

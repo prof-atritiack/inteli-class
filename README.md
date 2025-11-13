@@ -129,13 +129,44 @@ O arquivo `motor_min_sintetico.csv` contém dados sintéticos de múltiplos moto
 - `current`: Corrente em A
 - `alerta`: Flag binária indicando anomalia (0 ou 1)
 
+## Fontes de Pesquisa
+
+### Documentação e Tutoriais
+- **ESP32 Documentation**: [Espressif ESP32 Official Docs](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)
+- **ArduinoJson Library**: [ArduinoJson Documentation](https://arduinojson.org/)
+- **PubSubClient Library**: [PubSubClient GitHub](https://github.com/knolleary/pubsubclient)
+- **Node-RED Documentation**: [Node-RED Official Docs](https://nodered.org/docs/)
+- **MQTT Protocol**: [MQTT.org Documentation](https://mqtt.org/)
+- **HiveMQ Public Broker**: [HiveMQ Public MQTT Broker](https://www.hivemq.com/public-mqtt-broker/)
+
+### Bibliotecas e Frameworks
+- **Flask**: [Flask Documentation](https://flask.palletsprojects.com/)
+- **FastAPI**: [FastAPI Documentation](https://fastapi.tiangolo.com/)
+- **Docker**: [Docker Documentation](https://docs.docker.com/)
+- **Azure Cloud Services**: [Azure Documentation](https://docs.microsoft.com/azure/)
+
+### Uso de Inteligência Artificial
+Este projeto utilizou assistentes de IA para auxiliar no desenvolvimento:
+- **Código de geração**: Assistência na criação e otimização de código para ESP32, Node-RED e APIs
+- **Documentação**: Apoio na estruturação e escrita de documentação técnica
+- **Resolução de problemas**: Consulta para debugging e solução de problemas técnicos
+- **Boas práticas**: Orientação sobre padrões de código e arquitetura de sistemas IoT
+
+**Nota**: O uso de IA foi complementar ao desenvolvimento, servindo como ferramenta de apoio para acelerar o processo de desenvolvimento e garantir boas práticas de programação.
+
+### Referências Adicionais
+- **IoT Architecture Patterns**: Padrões de arquitetura para sistemas IoT
+- **MQTT Best Practices**: Melhores práticas para implementação de protocolo MQTT
+- **ESP32 WiFi Examples**: Exemplos oficiais de conexão Wi-Fi com ESP32
+- **RESTful API Design**: Princípios de design de APIs REST
+
 ## Autor
 
 André Tritiack
 
 ## Data
 
-Projeto desenvolvido em 12/11/2025 para aula teste Inteli
+Projeto desenvolvido em 12/11/2025
 
 ## Licença
 

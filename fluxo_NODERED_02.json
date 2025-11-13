@@ -71,7 +71,7 @@
         "method": "POST",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "https://tangentially-untreasurable-coralee.ngrok-free.dev/predict",
+        "url": "https://SUA_URL_API/predict",
         "tls": "",
         "persist": false,
         "proxy": "",
